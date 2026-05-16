@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- systemd ring -->
+    <circle cx="12" cy="12" r="9"/>
+    <!-- small nodes -->
+    <circle cx="12" cy="5" r="1.2"/>
+    <circle cx="7" cy="14" r="1.2"/>
+    <circle cx="17" cy="14" r="1.2"/>
+    <!-- connections -->
+    <path d="M12 6.2v2.6"/>
+    <path d="M8 13.1l2.4-1.4"/>
+    <path d="M16 13.1l-2.4-1.4"/>
+  </g>
+</svg>

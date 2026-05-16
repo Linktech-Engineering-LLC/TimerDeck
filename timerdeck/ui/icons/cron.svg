@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- clock -->
+    <circle cx="12" cy="12" r="8.5"/>
+    <!-- hands -->
+    <path d="M12 7v5l3 2"/>
+    <!-- circular arrow -->
+    <path d="M5.2 8.2A7 7 0 0 1 12 5"/>
+    <path d="M5 5.5v3h3"/>
+  </g>
+</svg>

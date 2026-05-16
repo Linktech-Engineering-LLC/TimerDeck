@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- door -->
+    <rect x="5" y="4" width="9" height="16" rx="1.5"/>
+    <circle cx="11" cy="12" r="0.9"/>
+    <!-- arrow out -->
+    <path d="M14 12h5"/>
+    <path d="M17.5 8.5L19 10l1.5 1.5L19 13l-1.5 1.5"/>
+  </g>
+</svg>
