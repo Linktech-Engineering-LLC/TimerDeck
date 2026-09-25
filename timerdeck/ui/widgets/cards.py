@@ -5,20 +5,19 @@
  Package: TimerDeck
  Author: Leon McClatchey
  Company: Linktech Engineering LLC
- Created: 2026-05-16
- Modified: 2026-05-16
- File: timerdeck/ui/helpers.py
+ Created: 2026-09-25
+Modified: 2026-09-25
+ File: timerdeck/ui/widgets/cards.py
  Version: 1.0.0
- Description: Helpers for the UI Models
+ Description: Description of this module
 """
-
 
 from pathlib import Path
 from PySide6.QtWidgets import QFrame, QLabel, QVBoxLayout
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QAction, QIcon
 
-ICONS_DIR = Path(__file__).parent / "icons"
+ICONS_DIR = Path(__file__).parents[1] / "icons"
 
 def icon(name: str) -> QIcon:
     return QIcon(str(ICONS_DIR / name))

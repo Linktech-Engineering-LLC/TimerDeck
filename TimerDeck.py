@@ -6,7 +6,7 @@
  Author: Leon McClatchey
  Company: Linktech Engineering LLC
  Created: 2026-05-16
-Modified: 2026-09-24
+Modified: 2026-09-25
  File: TimerDeck.py
  Version: 1.0.0
  Description: Entry point for the TimerDeck Application
@@ -16,7 +16,7 @@ Modified: 2026-09-24
 import sys
 from PySide6.QtWidgets import QApplication
 
-from timerdeck.ui import MainWindow
+from timerdeck import MainWindow
 
 def main():
     app = QApplication(sys.argv)

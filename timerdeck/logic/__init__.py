@@ -7,13 +7,19 @@
  Company: Linktech Engineering LLC
  Created: 2026-09-25
 Modified: 2026-09-25
- File: timerdeck/__init__.py
+ File: timerdeck/logic/__init__.py
  Version: 1.0.0
  Description: Description of this module
 """
 
-from .main_window import MainWindow
+from .cron_manager import CronManager
+from .host_manager import HostManager
+from .systemd_manager import SystemdManager
+from .user_manager import UserManager
 
 __all__ = [
-    "MainWindow"
+    "CronManager",
+    "HostManager",
+    "SystemdManager",
+    "UserManager"
 ]

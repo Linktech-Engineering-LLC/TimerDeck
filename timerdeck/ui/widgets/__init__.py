@@ -7,13 +7,19 @@
  Company: Linktech Engineering LLC
  Created: 2026-09-25
 Modified: 2026-09-25
- File: timerdeck/__init__.py
+ File: timerdeck/ui/widgets/__init__.py
  Version: 1.0.0
  Description: Description of this module
 """
 
-from .main_window import MainWindow
+from .cards import make_card
+from .cron_table import CronTableWidget
+from .dashboard import DashboardWidget
+from .sidebar import SidebarWidget
 
 __all__ = [
-    "MainWindow"
+    "CronTableWidget",
+    "DashboardWidget",
+    "make_card",
+    "SidebarWidget"
 ]
