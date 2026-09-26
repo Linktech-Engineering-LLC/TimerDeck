@@ -1,11 +1,11 @@
 # TimerDeck — Contribution Guidelines
 Deterministic, operator‑grade scheduling and environment management utilities for Linux (systemd + cron).
 
-**Suite:** Linktech Engineering Tools Suite
-**Maintainer:** Leon McClatchey, Linktech Engineering LLC
-**License:** MIT (source) · Proprietary (binaries, if distributed)
-**Requires:** Python 3.12+
-**Status:** Active Development (Phase 2)
+**Suite:** Linktech Engineering Tools Suite  
+**Maintainer:** Leon McClatchey, Linktech Engineering LLC  
+**License:** MIT (source) · Proprietary (binaries, if distributed)  
+**Requires:** Python 3.12+  
+**Status:** Active Development (Phase 2)  
 
 ## Table of Contents
 1. [Overview](#1-overview)
@@ -139,7 +139,7 @@ Contributors should update:
 * [README.md](README.md)
 * CONTRIBUTING.md
 * [Architecture.md](docs/Architecture.md) (if structural changes occur)
-* docs/systemd-comments.md (if comment parsing changes)
+* docs/systemd-parsing.md (if systemd parsing changes)
 * docs/cron-parsing.md (if cron parsing changes)
 
 Documentation must remain:

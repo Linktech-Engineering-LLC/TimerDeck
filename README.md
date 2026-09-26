@@ -1,14 +1,14 @@
 # TimerDeck
 Operator‑grade scheduling and environment management utilities for Linux (systemd + cron).
 
-**Suite:** Linktech Engineering Tools Suite
-**Maintainer:** Leon McClatchey, Linktech Engineering LLC
-**License:** MIT (source) · Proprietary (binaries, if distributed)
-**Requires:** Python 3.12+
-**Version:** 0.2.0 (In Development)
-**Packaging:** AppImage · Flatpak · DEB · RPM · TGZ · ZIP (planned)
-**PythonTools:** 0.2.0 (integration planned)
-**Last Updated:** 2026‑09‑26
+**Suite:** Linktech Engineering Tools Suite  
+**Maintainer:** Leon McClatchey, Linktech Engineering LLC  
+**License:** MIT (source) · Proprietary (binaries, if distributed)  
+**Requires:** Python 3.12+  
+**Version:** 0.2.0 (In Development)  
+**Packaging:** AppImage · Flatpak · DEB · RPM · TGZ · ZIP (planned)  
+**PythonTools:** 0.2.0 (integration planned)  
+**Last Updated:** 2026‑09‑26  
 
 ![Linktech Engineering Tools](https://img.shields.io/badge/Linktech%20Engineering-Tools%20Suite-0A66C2)
 ![Status: Under Construction](https://img.shields.io/badge/Status-Under_Construction-orange?style=for-the-badge)

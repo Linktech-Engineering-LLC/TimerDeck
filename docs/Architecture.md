@@ -1,11 +1,11 @@
 # TimerDeck — Architectural Overview
 Deterministic, operator‑grade scheduling and environment management utilities for Linux (systemd + cron).
 
-**Suite:** Linktech Engineering Tools Suite
-**Maintainer:** Leon McClatchey, Linktech Engineering LLC
-**License:** MIT (source) · Proprietary (binaries, if distributed)
-**Requires:** Python 3.12+
-**Status:** Active Development (Phase 2)
+**Suite:** Linktech Engineering Tools Suite  
+**Maintainer:** Leon McClatchey, Linktech Engineering LLC  
+**License:** MIT (source) · Proprietary (binaries, if distributed)  
+**Requires:** Python 3.12+  
+**Status:** Active Development (Phase 2)  
 
 ## Table of Contents
 1. [Purpose](#1-purpose)
