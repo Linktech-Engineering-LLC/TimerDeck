@@ -13,12 +13,14 @@ Modified: 2026-09-25
 """
 
 from .cron_manager import CronManager
+from .env_manager import EnvManager
 from .host_manager import HostManager
 from .systemd_manager import SystemdManager
 from .user_manager import UserManager
 
 __all__ = [
     "CronManager",
+    "EnvManager",
     "HostManager",
     "SystemdManager",
     "UserManager"

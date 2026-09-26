@@ -29,28 +29,63 @@ class CronManager:
             cmd = "crontab -l"
         else:
             cmd = f"sudo crontab -u {user} -l"
-
         # Run command
         output = session.run(cmd)
         # Parse cron lines
         return self._parse_cron(output.msg)
 
     def _parse_cron(self, output: str):
-        lines = [
-            l.strip()
-            for l in output.splitlines()
-            if l.strip() and not l.startswith("#")
-        ]
+        lines = [l.rstrip() for l in output.splitlines()]
 
         parsed = []
+        pending_comment = ""
+
         for line in lines:
-            parts = line.split(maxsplit=5)
+            stripped = line.strip()
+
+            # Skip empty lines
+            if not stripped:
+                continue
+
+            # Preceding comment (Kcron style)
+            if stripped.startswith("#"):
+                # Accumulate multi-line comments
+                comment_text = stripped[1:].strip()
+                if pending_comment:
+                    pending_comment += " " + comment_text
+                else:
+                    pending_comment = comment_text
+                continue
+
+            # Inline comment
+            inline_comment = ""
+            if "#" in stripped:
+                stripped, inline_comment = stripped.split("#", 1)
+                inline_comment = inline_comment.strip()
+
+            # Parse schedule + command
+            parts = stripped.split(maxsplit=5)
+
             if len(parts) >= 6:
                 schedule = " ".join(parts[:5])
-                command = parts[5]
+                command = parts[5].strip()
             else:
-                schedule = line
+                schedule = stripped
                 command = ""
-            parsed.append((schedule, command))
+
+            # Choose comment priority:
+            # 1. Inline comment
+            # 2. Preceding comment
+            comment = inline_comment if inline_comment else pending_comment
+
+            parsed.append({
+                "schedule": schedule,
+                "command": command,
+                "status": "enabled",
+                "comment": comment
+            })
+
+            # Reset preceding comment after attaching it
+            pending_comment = ""
 
         return parsed

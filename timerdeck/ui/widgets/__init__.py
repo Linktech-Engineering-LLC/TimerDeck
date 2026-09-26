@@ -12,7 +12,7 @@ Modified: 2026-09-25
  Description: Description of this module
 """
 
-from .cards import make_card
+from .cards import make_card, icon
 from .cron_table import CronTableWidget
 from .dashboard import DashboardWidget
 from .sidebar import SidebarWidget
@@ -20,6 +20,7 @@ from .sidebar import SidebarWidget
 __all__ = [
     "CronTableWidget",
     "DashboardWidget",
+    "icon",
     "make_card",
     "SidebarWidget"
 ]

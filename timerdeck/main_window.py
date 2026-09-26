@@ -26,11 +26,12 @@ from PySide6.QtGui import QAction, QIcon
 
 from .logic import (
     CronManager,
+    EnvManager,
     HostManager,
     SystemdManager,
     UserManager
 )
-from .ui.helpers import icon, make_card
+from .ui.widgets import icon, make_card
 from .ui.widgets import (
     CronTableWidget,
     DashboardWidget,
@@ -44,6 +45,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.cron_manager = CronManager()
+        self.env_manager = EnvManager()
         self.host_manager = HostManager()
         self.user_manager = UserManager()
         self.systemd_manager = SystemdManager()
@@ -94,9 +96,12 @@ class MainWindow(QMainWindow):
         self.stack = QStackedWidget()
 
         # Dashboard view
-        dashboard = DashboardWidget()
-        self.stack.addWidget(dashboard)
-
+        self.dashboard = DashboardWidget()
+        self.stack.addWidget(self.dashboard)
+        self.stack.setCurrentWidget(self.dashboard)
+        # Populate dashboard immediately
+        self.refresh_dashboard()
+        
         #Unified Systemd view placeholder
         systemd_view = QLabel(
             "Systemd Timers\n\n"
@@ -123,7 +128,7 @@ class MainWindow(QMainWindow):
     def load_user_cron(self, user: str):
         self.active_user = user
         rows = self.cron_manager.load_user_cron(user)
-        self.cron_table.populate(rows)
+        self.dashboard.set_cron_tasks(rows)
     def set_host(self, host: str):
         """Update the active host when the sidebar host selector changes."""
         self.active_host = host
@@ -163,4 +168,19 @@ class MainWindow(QMainWindow):
     def update_remote_mode(self, remote: bool):
         self.remote_mode = remote
         self.host_manager.set_remote_mode(remote)
+    def refresh_dashboard(self):
+        user = self.sidebar.user_selector.currentText()
+        scope = self.sidebar.active_scope
+
+        # Cron
+        cron_rows = self.cron_manager.load_user_cron(user)
+        self.dashboard.set_cron_tasks(cron_rows)
+
+        # Systemd
+        systemd_rows = self.systemd_manager.load_timers(user, scope)
+        self.dashboard.set_systemd_tasks(systemd_rows)
+
+        # Environment
+        env_rows = self.env_manager.load_env(user, scope)
+        self.dashboard.set_environment_variables(env_rows)
         
